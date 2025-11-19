@@ -1,9 +1,13 @@
 from fastapi import FastAPI
+from src.blog.resources import router
 
-app = FastAPI()
 
 def get_app():
     app = FastAPI()
+
+    app.include_router(router) # <- вот тут мы зарегистрировали роутер
+
     return app
+
 
 app = get_app()
